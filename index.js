@@ -5,7 +5,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://dev-cluster-pro-server.vercel.app/',
+    'http://localhost:5173/',
+  ]
+}));
 app.use(express.json());
 
 
